@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 1.1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .first-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            padding: 0 10%;
+            background-color: rgb(166, 112, 41);
+        }
+
+        .first-nav .nav-list {
+            list-style: none;
+            float: right;
+        }
+
+        .first-nav .nav-item {
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color .3s;
+        }
+
+        .first-nav .nav-item:hover {
+            background-color: rgba(0, 0, 0, .1)
+        }
+
+        .first-nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            padding: 25px 15px;
+        }
+
+        .first-nav .menu {
+            position: relative;
+            background-color: rgba(255, 255, 255, .95);
+            float: left;
+            height: 100%;
+            width: 70px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            transition: all .3s;
+            transform: translateX(0px);
+        }
+
+        .first-nav .menu:hover {
+            background-color: rgba(255, 255, 255, .7)
+        }
+
+        #menu-checkbox {
+            display: none;
+        }
+
+        .menu .hamburger {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 2px;
+            width: 40px;
+            background: #333;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .menu .hamburger::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #333;
+            top: -10px;
+            left: 0;
+            border-radius: 2px;
+            transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .menu .hamburger::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #333;
+            top: 10px;
+            left: 0;
+            border-radius: 2px;
+            transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .second-nav {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 20%;
+            height: 100vh;
+            background-color: rgb(166, 112, 41);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+            transform: translateX(-500px);
+            transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+            border: 1px dashed #fff;
+        }
+
+        .second-nav ul {
+            list-style: none;
+        }
+
+        .second-nav li {
+            display: block;
+            width: 100%;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .second-nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #menu-checkbox:checked~.second-nav {
+            transform: translateX(0px)
+        }
+
+        #menu-checkbox:checked~.menu {
+            transform: translateX(-10vw);
+            transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        #menu-checkbox:checked~.menu>.hamburger {
+            background-color: transparent;
+        }
+
+        #menu-checkbox:checked~.menu>.hamburger::before {
+            top:0;
+            transform: rotate(40deg);
+        }
+
+        #menu-checkbox:checked~.menu>.hamburger::after {
+            top:0;
+            transform: rotate(-40deg);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="first-nav">
+
+            <input type="checkbox" id="menu-checkbox">
+            <label class="menu" for="menu-checkbox">
+                <span class="hamburger"></span>
+            </label>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+
+            <nav class="second-nav">
+                <ul>
+                    <li><a href="#">Category 1</a></li>
+                    <li><a href="#">Category 2</a></li>
+                    <li><a href="#">Category 3</a></li>
+                </ul>
+            </nav>
+        </nav>
+
+
+    </header>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fade in out</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            display: block;
+            height: 70vh;
+            width: 100%;
+            background-image: url('./anthony-delanoix-28851.jpg');
+            background-size: 100%;
+            transition: background-position .3s;
+        }
+
+        .hero__overlay {
+            background-color: rgba(0, 0, 0, .65);
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        .hero__content {
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            line-height: 150%;
+        }
+
+        .hero:hover {
+            background-position-y: 10%;
+        }
+
+        .hero:hover .hero__overlay {
+            opacity: 1;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        .cards-section {
+            padding: 20px;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .cards-section button{
+            display: block;
+            margin: 0 auto;
+        }
+
+        .card {
+            display: inline-block;
+            width: 40%;
+            /* margin-right: 1rem; */
+            border-radius: 3px;
+            border: 1px solid #eee;
+            margin: 1rem;
+            opacity: 0;  
+            transition: opacity .3s;
+        }
+        .card:last-child {
+            transition-delay: .05s;
+        }
+        .card .card-img {
+            width: 100%;
+        } 
+
+        .card .card-text {
+            padding: 1rem;
+        }
+
+        .cards-section > button:hover ~ .card {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero__overlay">
+            <div class="hero__content">
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, voluptatibus corporis eveniet cumque numquam illum! Ipsa quibusdam neque, temporibus distinctio odit voluptatem. Quaerat facere consequuntur asperiores quas distinctio omnis soluta?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-section">
+            <h2>Cards</h2>
+            <button id="card-trigger">Hover me to see cards</button>
+        
+            <div class="card">
+                <img src="./anthony-delanoix-28851.jpg" alt="" class="card-img">
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum voluptate dignissimos quis libero hic ipsam in ducimus itaque quaerat veritatis, debitis, eligendi repudiandae porro laboriosam placeat officiis odio ratione totam.</p>
+            </div>
+            <div class="card">
+                    <img src="./anthony-delanoix-28851.jpg" alt="" class="card-img">
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum voluptate dignissimos quis libero hic ipsam in ducimus itaque quaerat veritatis, debitis, eligendi repudiandae porro laboriosam placeat officiis odio ratione totam.</p>
+                </div>
+    </div>
+    
+    
+</body>
+</html>

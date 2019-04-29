@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .hover-me {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card-img {
+            margin: 10px;
+        }
+
+        .card-img>img {
+            width: 100%;
+            transition: all .3s;
+
+        }
+
+        .card:not(:nth-of-type(1)) .card-img {
+            overflow: hidden;
+        }
+
+        .card:nth-of-type(1) .card-img>img:hover {
+            transform: scale(1.2);
+        }
+
+        .card:nth-of-type(2) .card-img>img {
+            transform: rotate(10deg) scale(1.4)
+        }
+
+        .card:nth-of-type(2) .card-img>img:hover {
+            transform: scale(1.2)
+        }
+
+        .card:nth-of-type(3) .card-img>img:hover {
+            transform: scale(1.2);
+            transform-origin: top left;
+        }
+
+        .card:nth-of-type(4) .card-img>img:hover {
+            transform: scale(2);
+            filter: blur(5px);
+        }
+
+        .card:nth-of-type(5) .card-img>img:hover {
+            transform: scale(2) rotate(10deg);
+            filter: grayscale(1)
+        }
+
+        .section-services {
+            margin: 30px 0;
+            width: 100%;
+            background: tomato;
+            padding: 20px;
+            color: white;
+        }
+
+        .section-services h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-services .content {
+            background-color: rgba(0, 0, 0, .2);
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+            padding: 15px;
+            border-radius: 2px;
+        }
+
+        .section-services .content:nth-of-type(2n) > p {
+            transform: skew(10deg)
+        }
+
+        .section-services .content:nth-of-type(2n+1) > p {
+            transform: skew(-10deg)
+        }
+
+        .section-services .content:nth-of-type(2n) {
+            transform: skewX(-10deg)
+        }
+
+        .section-services .content:nth-of-type(2n+1) {
+            transform: skewX(10deg)
+        }
+
+        .sliding-door { 
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            color: #fff;
+        }
+
+        .sliding-door h1 {
+            margin-bottom: 10px;
+        }
+
+        .sliding-door .box {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sliding-door .content {
+            background-color: rgb(42, 131, 101);
+            padding: 20px;
+        }
+
+        .sliding-door .content:last-child {
+            position: absolute;
+            background-color: rgb(149, 35, 35);
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: .3s all cubic-bezier(0.77, 0, 0.175, 1)
+        }
+
+        .sliding-door:hover .content:last-child {
+            position: absolute;
+            transform: translateX(0%);
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- hover me -->
+    <div class="hover-me">
+        <div class="card">
+            <div class="card-img"><img src="1.jpg" alt=""></div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="1.jpg" alt=""></div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="1.jpg" alt=""></div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="1.jpg" alt=""></div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="1.jpg" alt=""></div>
+        </div>
+
+    </div>
+
+    <!-- skewed -->
+
+    <div class="section-services">
+        <h1>Services</h1>
+        <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt suscipit sed molestiae in
+            tempore est vero eaque iure dicta molestias quas, laboriosam consequuntur quidem velit rerum omnis. Ratione,
+            sit quae? </p></div>
+        <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, dignissimos id. Cupiditate
+            provident, ratione, unde nisi numquam distinctio aliquid alias non architecto fugit reiciendis laboriosam
+            cumque voluptate nesciunt inventore ad.</p></div>
+        <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga excepturi amet unde
+            asperiores aperiam ullam ab accusamus nemo velit ut voluptate rem esse dicta aliquid culpa, aspernatur,
+            inventore iusto.</p></div>
+        <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga excepturi amet unde
+            asperiores aperiam ullam ab accusamus nemo velit ut voluptate rem esse dicta aliquid culpa, aspernatur,
+            inventore iusto.</p></div>
+        <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga excepturi amet unde
+            asperiores aperiam ullam ab accusamus nemo velit ut voluptate rem esse dicta aliquid culpa, aspernatur,
+            inventore iusto.</p></div>
+    </div>
+
+    <!-- sliding door  -->
+
+    <div class="sliding-door">
+        <div class="box">
+            <div class="content">
+                    <h1>Main</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quos natus saepe voluptatem vero soluta nihil laudantium praesentium quo officia debitis explicabo, quae fugiat, dolorum nam numquam necessitatibus. Voluptatem, aperiam?</p>
+            </div>
+            <div class="content">
+                    <h1>Sub section</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quos natus saepe voluptatem vero soluta nihil laudantium praesentium quo officia debitis explicabo, quae fugiat, dolorum nam numquam necessitatibus. Voluptatem, aperiam?</p>
+            </div>  
+        </div>
+    </div>
+</body>
+
+</html>
